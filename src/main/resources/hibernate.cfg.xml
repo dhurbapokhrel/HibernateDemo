@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- MySql Dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- MySql Connector -->
+
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ABC_Pvt_Ltd</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root@123</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- Specifying Session Context -->
+		
+		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
+		<mapping class="com.cubic.entities.EmployeeEntity"/>
+		<mapping class="com.cubic.entities.AddressEntity"/>
+		<mapping class="com.cubic.entities.SalaryEntity"/>
+			
+		<!-- <property name="hibernate.current_session_context_class">thread</property> -->
+		<!-- <property name="hibernate.connection.pool_size">1</property> -->
+
+	</session-factory>
+</hibernate-configuration>
